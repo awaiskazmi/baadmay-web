@@ -1,0 +1,407 @@
+:root {
+  --primary: #5630db;
+  --secondary: #00b4b7;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir-book.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("./fonts/avenir-black.otf");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  color: #404040;
+}
+
+dl.dl {
+  counter-reset: howto;
+}
+
+dl.dl dt::before {
+  content: counter(howto);
+  counter-increment: howto;
+  position: absolute;
+  left: -91px;
+  width: 67px;
+  height: 67px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 36px;
+  margin-right: 16px;
+}
+
+.dl-primary dt::before {
+  background-color: var(--primary);
+}
+
+.dl-secondary dt::before {
+  background-color: var(--secondary);
+}
+
+dl.dl dt {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 12px;
+  margin-left: 83px;
+  position: relative;
+}
+
+dl.dl dd {
+  margin-left: 83px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+dl.dl dd:not(:last-child) {
+  margin-bottom: 120px;
+}
+
+.dl-tnc {
+  counter-reset: tnc;
+}
+
+.dl-tnc dt {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.dl-tnc dt::before {
+  content: counter(tnc) ". ";
+  counter-increment: tnc;
+}
+
+.dl-tnc dd {
+  font-size: 14px;
+  margin: 0;
+  line-height: 20px;
+}
+
+@media (max-width: 992px) {
+  dl.dl dd:not(:last-child) {
+    margin-bottom: 48px;
+  }
+  dl.dl dt::before {
+    left: -64px;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+  dl.dl dt {
+    font-size: 18px;
+    margin-bottom: 12px;
+    margin-left: 72px;
+  }
+  dl.dl dd {
+    margin-left: 72px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  margin-bottom: 40px;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: #404040;
+}
+
+.swiper-button-disabled {
+  display: none;
+}
+
+.swiper-pagination-bullet {
+  background: #e0e7ec;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #00b4b7;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 0;
+}
+
+#howto {
+  background: var(--secondary) url("./images/bghowto.png") center right / auto
+    60% no-repeat;
+}
+
+#biz-howto {
+  background: var(--primary) url("./images/bg-business-how.png") center left /
+    auto 90% no-repeat;
+}
+
+#qr {
+  background: #ffc5e0 url("./images/bgqr.png") center right / auto 90% no-repeat;
+}
+
+#stats {
+  background: #ffc5e0 url("./images/graphic-stats.png") bottom right / auto 90%
+    no-repeat;
+}
+
+#phone {
+  background: var(--secondary) url("./images/bg-contact-us.png") center right /
+    30% auto no-repeat;
+}
+
+@media (max-width: 992px) {
+  #howto {
+    background: var(--secondary);
+  }
+  #qr {
+    background-size: 95% auto;
+    background-position: bottom right;
+  }
+  #biz-howto {
+    background: var(--primary);
+  }
+  #stats {
+    background: #ffc5e0 url("./images/graphic-stats-mobile.png") bottom right -140px /
+      auto 65% no-repeat;
+  }
+}
+
+.accordion-option input {
+  display: none;
+}
+
+.accordion-option label {
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.accordion-option label::after {
+  font-family: "Line Awesome Free";
+  content: "\f107";
+  margin-left: 24px;
+  flex-shrink: 0;
+}
+
+.accordion-option .detail {
+  margin: 0;
+  line-height: 22px;
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 24px;
+  padding-right: 24px;
+  transition: all 0s;
+}
+
+.accordion-option {
+  display: block;
+  cursor: pointer;
+  background-color: #f6e4b9;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.accordion-option input:checked ~ .detail {
+  max-height: 100%;
+  padding: 0 24px 24px 24px;
+  transition: max-height 0.2s ease, padding 0.2s ease;
+}
+
+.accordion-option input:checked ~ label::after {
+  content: "\f106";
+}
+
+.swiper h4 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.question-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary);
+  position: relative;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  margin-left: -40px;
+}
+
+.question-heading::before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 5px;
+  background-color: var(--primary);
+  margin-right: 8px;
+}
+
+.question:not(:last-child)::after {
+  content: "";
+  height: 1px;
+  display: block;
+  background-color: #d2d2d2;
+  margin: 24px 0;
+}
+
+.question label {
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.question label::after {
+  font-family: "FontAwesome";
+  content: "\f107";
+  flex-shrink: 0;
+  margin-left: 1rem;
+  font-size: 24px;
+  /* content: "\f106"; */
+}
+
+.question input {
+  display: none;
+}
+
+.question .answer {
+  margin-top: 24px;
+  margin-bottom: 0;
+  line-height: 24px;
+  display: none;
+}
+
+.question input:checked ~ .answer {
+  display: block;
+}
+
+.question input:checked ~ label::after {
+  content: "\f106";
+}
+
+.question-section {
+  margin-bottom: 64px;
+}
+
+@media (max-width: 768px) {
+  .question-heading {
+    font-size: 20px;
+    margin-left: 0;
+  }
+  .question label {
+    font-size: 16px;
+  }
+  .question .answer {
+    font-size: 14px;
+  }
+  .question-section h4 {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+}
+
+fieldset {
+  display: block;
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+fieldset textarea::placeholder,
+fieldset label {
+  position: absolute;
+  pointer-events: none;
+  white-space: nowrap;
+  font-size: 16px;
+  top: 22px;
+  left: 12px;
+  padding: 0 4px;
+  color: #939393;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+fieldset input,
+fieldset textarea {
+  height: 60px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  padding: 0 16px;
+  font-size: 16px;
+}
+
+fieldset input:focus,
+fieldset textarea:focus {
+  border-color: var(--primary);
+}
+
+fieldset input:valid ~ label,
+fieldset input:focus ~ label {
+  font-size: 12px;
+  top: -6px;
+  color: var(--primary);
+}
+
+#terms h2 {
+  margin-top: 64px;
+  font-size: 32px;
+}
+
+#terms p,
+li {
+  line-height: 24px;
+}
+
+@media (max-width: 992px) {
+  .swiper h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .swiper p {
+    font-size: 12px;
+    margin-top: 0;
+  }
+  #terms h2 {
+    margin-top: 48px;
+    font-size: 20px;
+  }
+  #terms p {
+    line-height: 24px;
+  }
+}
